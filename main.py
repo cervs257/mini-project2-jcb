@@ -151,3 +151,6 @@ def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
 
 
 # potentially add bollinger bands?
+
+if __name__ == "__main__":
+    plot_returns(["usdmxn", "eurusd", "nzdusd"])
