@@ -74,7 +74,7 @@ def print_range(ccy_df):
     low = ccy_df.Low.min()
     high = ccy_df.High.max()
     close = ccy_df.Close[-1]
-    open = ccy_df.Open[0]
+    ccy_open = ccy_df.Open[0]
     average = ccy_df.Close.mean()
     std_dev = np.std(ccy_df.Close)
     print(ccy_df.name + "'s current value is {}.".format(round(close, 2)))
@@ -88,7 +88,8 @@ def print_range(ccy_df):
         "- "
         + ccy_df.name
         + " {} {}%".format(
-            "dropped" if close < open else "rose", round((close / open - 1) * 100, 2)
+            "dropped" if close < ccy_open else "rose",
+            round((close / ccy_open - 1) * 100, 2),
         )
     )
     print(
@@ -116,7 +117,7 @@ def print_range(ccy_df):
 
 
 def print_ccy_levels(ccy_list, time_period=5):
-    currencies = create_currencies_dict(ccy_list, date_range(time_period=5))
+    currencies = create_currencies_dict(ccy_list, date_range(time_period))
     for ccy in ccy_list:
         df = create_df(ccy, currencies)
         print_range(df)
@@ -146,6 +147,7 @@ def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
     ax.set_ylabel("% change")
     ax.set_xlabel("Date")
     plt.xticks(rotation=45)
+    fig.suptitle("Currency returns")
 
 
 # potentially add bollinger bands?
