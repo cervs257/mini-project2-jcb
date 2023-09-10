@@ -116,13 +116,28 @@ def print_range(ccy_df):
     pass
 
 
-def print_ccy_levels(ccy_list, time_period=5):
+def print_ccy_levels(ccy_list, time_period=30):
     currencies = create_currencies_dict(ccy_list, date_range(time_period))
     for ccy in ccy_list:
         df = create_df(ccy, currencies)
         print_range(df)
         pass
     pass
+
+
+def generate_summary_statistics(
+    ccy_list=None, ccy_dict=None, column="Close", time_period=30
+):
+    if type(ccy_list) == str:
+        ccy_dict = create_currencies_dict(ccy_list, date_range(time_period=time_period))
+        pass
+    if type(ccy_list) == list:
+        ccy_dict = create_currencies_dict(ccy_list, date_range(time_period=time_period))
+    df = pd.DataFrame(columns=ccy_dict.keys())
+    for i in df.columns:
+        df[i] = ccy_dict[i][column]
+        pass
+    return df.describe()
 
 
 def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
@@ -153,4 +168,7 @@ def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
 # potentially add bollinger bands?
 
 if __name__ == "__main__":
-    plot_returns(["usdmxn", "eurusd", "nzdusd"])
+    ccy_list = ["usdmxn", "eurusd", "nzdusd"]
+    print(generate_summary_statistics(ccy_list))
+    print_ccy_levels(ccy_list)
+    plot_returns(ccy_list)
