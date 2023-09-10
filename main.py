@@ -168,7 +168,7 @@ def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
 # potentially add bollinger bands?
 
 if __name__ == "__main__":
-    ccy_list = ["usdmxn", "eurusd", "nzdusd"]
-    print(generate_summary_statistics(ccy_list))
-    print_ccy_levels(ccy_list)
-    plot_returns(ccy_list)
+    ccys = ["usdmxn", "eurusd", "nzdusd"]
+    print(generate_summary_statistics(ccys))
+    print_ccy_levels(ccys)
+    plot_returns(ccys)
