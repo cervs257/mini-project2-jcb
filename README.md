@@ -1,8 +1,8 @@
-# ids706_gh_template
+# Historic currency data
 
-## IDS 706 mini-project 1
+## IDS 706 mini-project 2
 
-Created a GitHub template that:
-* installs a few basic packages
-* formats and lints my code
-* runs a few tests on my code
+Created a python script that:
+* uses yahoo finance to download historic data on currencies
+* creates open, high, low, close dictionaries and dataframes
+* computes each currency's high, low, mean, std dev and close for the given period
