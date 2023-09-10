@@ -117,7 +117,7 @@ def print_range(ccy_df):
 
 
 def print_ccy_levels(ccy_list, time_period=30):
-    currencies = create_currencies_dict(ccy_list, date_range(time_period))
+    currencies = create_currencies_dict(ccy_list, date_range(time_period=time_period))
     for ccy in ccy_list:
         df = create_df(ccy, currencies)
         print_range(df)
