@@ -1,12 +1,5 @@
-from main import isPrime
+from main import create_ticker
 
-def test_isPrime():
-  assert not isPrime(0)
-  assert not isPrime(1)
-  assert isPrime(2)
-  assert isPrime(3)
-  assert not isPrime(4)
-  assert isPrime(101)
-  assert not isPrime(13*17)
-  pass
 
+def test_create_ticker():
+    assert create_ticker("usdmxn") == "USDMXN=X"
