@@ -15,6 +15,8 @@ lint:
 	pylint --disable=R,C --disable=unnecessary-pass --ignore-patterns=test_.*?py *.py
 # container-lint
 
+plot:
+	python3 main.py
 # deploy
 
 all: install lint format test 
