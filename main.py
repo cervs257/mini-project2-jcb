@@ -172,3 +172,4 @@ if __name__ == "__main__":
     print(generate_summary_statistics(ccys))
     print_ccy_levels(ccys)
     plot_returns(ccys)
+    plt.savefig("ccy_returns.png")
