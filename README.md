@@ -1,3 +1,5 @@
+![Currencies](https://github.com/nogibjj/mini-project2-jcb/actions/workflows/ci-cd_actions.yml/badge.svg)
+
 # Historic currency data
 
 ## IDS 706 mini-project 2
