@@ -2,12 +2,12 @@
 
 ## IDS 706 mini-project 2
 
-Created a python script that:
+### Created a python script that:
 * uses yahoo finance to download historic data on currencies
 * creates open, high, low, close dictionaries and dataframes
 * computes each currency's high, low, mean, std dev and close for the given period
 
-Running the script with dates Aug 14 2023 and Sep 08 2023 on USDMXN, EURUSD and NZDUSD returns the following:
+### Running the script with dates Aug 14 2023 and Sep 08 2023 on USDMXN, EURUSD and NZDUSD returns the following:
 
 usdmxn's current value is 17.58.
 Between 14/Aug/23 and 08/Sep/23:
@@ -28,4 +28,6 @@ nzdusd's current value is 0.59.
 - nzdusd reached a high of 0.6 on 01 Sep 23
 - nzdusd had an average and standard deviation of 0.59 and 0.0 over the period.
 
+### This is the graph that was generated:
+![](https://github.com/nogibjj/mini-project2-jcb/blob/main/ccy_returns.png)
 
