@@ -172,8 +172,8 @@ if __name__ == "__main__":
     ccys = ["usdmxn", "eurusd", "nzdusd"]
     ticker_list = [create_ticker(ticker) for ticker in ccys]
     download_monthly_prices(ticker_list)
-    currencies = pd.read_csv("currency_prices.csv", header=[0, 1], index_col=0)
-    print(currencies.describe())
+    currencies_df = pd.read_csv("currency_prices.csv", header=[0, 1], index_col=0)
+    print(currencies_df.describe())
     # print(generate_summary_statistics(ccys))
     print_ccy_levels(ccys)
     plot_returns(ccys)
