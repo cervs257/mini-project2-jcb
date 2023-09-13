@@ -3,6 +3,7 @@ import datetime
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from download_currencies import download_monthly_prices
 
 
 def date_range(end_date=None, start_date=None, time_period=30):
@@ -169,7 +170,11 @@ def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
 
 if __name__ == "__main__":
     ccys = ["usdmxn", "eurusd", "nzdusd"]
-    print(generate_summary_statistics(ccys))
+    ticker_list = [create_ticker for ticker in ccys]
+    download_monthly_prices(ticker_list)
+    currencies = pd.read_csv("currency_prices.csv", header=[0, 1], index_col=0)
+    print(currencies.describe())
+    # print(generate_summary_statistics(ccys))
     print_ccy_levels(ccys)
     plot_returns(ccys)
     plt.savefig("ccy_returns.png")
