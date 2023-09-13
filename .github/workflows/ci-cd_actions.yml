@@ -1,9 +1,9 @@
 name: ci-cd_actions
 on: 
   push:
-    branches: ["main"]
+    branches: ["development"]
   pull_request:
-    branches: ["main"]
+    branches: ["development"]
   workflow_dispatch:
 
 jobs:
