@@ -170,7 +170,7 @@ def plot_returns(ccy_list=None, ccy_dict=None, column="Close", time_period=30):
 
 if __name__ == "__main__":
     ccys = ["usdmxn", "eurusd", "nzdusd"]
-    ticker_list = [create_ticker for ticker in ccys]
+    ticker_list = [create_ticker(ticker) for ticker in ccys]
     download_monthly_prices(ticker_list)
     currencies = pd.read_csv("currency_prices.csv", header=[0, 1], index_col=0)
     print(currencies.describe())
